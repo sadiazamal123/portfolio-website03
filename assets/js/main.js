@@ -55,8 +55,7 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
-// email from contact
-
+// email from contact-section
 function sendMail() {
     var params = {
         name: document.getElementById("name").value,
