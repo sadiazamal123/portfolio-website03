@@ -55,4 +55,27 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
+// email from contact
+
+function sendMail() {
+    var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+    };
+
+    const serviceID = "service_um5mfxj";
+    const templateID = "template_ua5tppc";
+
+    emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+        console.log(res);
+        alert("your message sent successfully");
+    })
+    .catch((err) => console.log(err));
+}
 
